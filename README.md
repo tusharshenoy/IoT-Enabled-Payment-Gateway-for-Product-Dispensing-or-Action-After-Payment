@@ -44,6 +44,9 @@ The system follows a structured approach:
 ### 📋 2. System Block Diagram
 
 #### **Figure 2.1 Block Diagram**
+![blockdiagram](https://github.com/user-attachments/assets/9d93b81c-ad1b-4b13-8a61-4f4aaf92fce7)
+
+
 
 Figure 2.1 illustrates an IoT-enabled payment gateway system designed for a product vending or action-triggering device, such as a vending machine. At the core of this system lies the IoT microcontroller, which manages various components through its GPIO pins. The microcontroller interfaces with the user, a display unit, and a dispensing mechanism.
 
@@ -59,6 +62,9 @@ Upon receiving confirmation of successful payment from the cloud platform, the I
 In this project, the major equipment includes the ESP32 Wroom 32 microcontroller, which serves as the core of the system, managing secure communication and transaction processing. The ESP32’s capabilities enable it to continuously monitor Firebase for real-time payment updates and to interface seamlessly with the dispensing mechanism upon transaction confirmation.
 
 #### **Figure 2.2 ESP32 Wroom 32**
+![esp](https://github.com/user-attachments/assets/606f3b67-95ec-4693-a853-16f220e3e9b4)
+
+
 
 **ESP32 Wroom 32 Features:**
 
@@ -76,6 +82,18 @@ This makes the ESP32 ideal for secure, automated payment systems, coordinating u
 #### **Firebase as the Real-Time Database**
 
 Firebase acts as a cloud-based, real-time database that securely stores transaction data and updates the payment status after processing through Razorpay. This integration with the ESP32 allows for instant transaction verification, enabling timely product dispensing or service activation upon payment confirmation. Firebase’s real-time updates ensure seamless, continuous communication between the IoT device and the payment gateway, supporting efficient transaction processing.
+
+#### **Figure 2.3: Database URL**
+![api](https://github.com/user-attachments/assets/961ff631-efc4-4d4d-8765-843b1568c710)
+
+
+#### **Figure 2.4: Realtime Database**
+![realtime database](https://github.com/user-attachments/assets/9721bf0e-fbf0-4df7-9279-94a8b3ed0aa1)
+
+#### **Figure 2.5: Web API keys and others**
+![web api keys and others](https://github.com/user-attachments/assets/de646c30-cdd4-48a7-b938-11b267d0bce2)
+
+
 
 **Key Features of Firebase in this Project:**
 
@@ -110,6 +128,9 @@ These interconnections ensure smooth operation by allowing the system to respond
 ## Connection Diagram Setup
 
 **Figure 3.1: Circuit Diagram**  
+![circuit_image](https://github.com/user-attachments/assets/c2dc9929-0337-4165-ab12-276255cd699d)
+
+
 The circuit diagram as shown in figure 3.1 depicts a setup featuring an ESP32 microcontroller as the central control unit. The ESP32 is connected to a relay module, a TFT display, push-button switches, a buzzer and multiple motors. Operating as the control hub, the ESP32 receives input from push-buttons connected to its GPIO pins via resistors, which send specific commands, such as activating the motors or triggering other actions.  
 The relay module, controlled by the ESP32’s GPIO pins, powers and operates the motors connected to its output channels. Each motor is linked to a dedicated relay channel, allowing independent operation. The relays receive power from an   
 external 12V power supply, stepped down to 5V through a buck converter, ensuring proper current requirements for the motors and relays. This 5V output also powers the ESP32 through its VIN pin, with a common ground shared across all components.  
@@ -170,7 +191,7 @@ The figure 4.4 shows the fully assembled vending machine with products in place,
 
 
 #### **Figure 4.5: TFT GUI and Push Buttons**
-![Uploading TFT_GUI_Push.jpg…]()
+![TFT_GUI_Push](https://github.com/user-attachments/assets/42c34518-12bf-49be-a79d-6ad24061f523)
 
 
 
