@@ -1,4 +1,4 @@
-
+# IoT-Enabled-Payment-Gateway-for-Product-Dispensing-or-Action-After-Payment
 ### 📋 **1. Introduction**
 
 The Internet of Things (IoT) connects physical devices like sensors, processors, and electronic components to the internet, enabling them to communicate and share data seamlessly. Since its early days, from the first internet-connected Coca-Cola machine in 1982 to the widespread use of smart home devices today, IoT has transformed industries like healthcare, agriculture, and transportation.
