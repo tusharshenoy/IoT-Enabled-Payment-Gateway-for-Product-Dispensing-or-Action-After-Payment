@@ -41,9 +41,9 @@ The system follows a structured approach:
 * **Razorpay Setup:** Secure, UPI-based payments using dynamic QR codes.
 * **Final Deployment:** Testing and optimizing the system for real-world conditions.
 
-### 📋 System Block Diagram
+### 📋 2. System Block Diagram
 
-#### **2.1 Block Diagram**
+#### **Figure 2.1 Block Diagram**
 
 Figure 2.1 illustrates an IoT-enabled payment gateway system designed for a product vending or action-triggering device, such as a vending machine. At the core of this system lies the IoT microcontroller, which manages various components through its GPIO pins. The microcontroller interfaces with the user, a display unit, and a dispensing mechanism.
 
@@ -57,6 +57,8 @@ Upon receiving confirmation of successful payment from the cloud platform, the I
 #### **2.2 Specification of Major Equipment**
 
 In this project, the major equipment includes the ESP32 Wroom 32 microcontroller, which serves as the core of the system, managing secure communication and transaction processing. The ESP32’s capabilities enable it to continuously monitor Firebase for real-time payment updates and to interface seamlessly with the dispensing mechanism upon transaction confirmation.
+
+#### **Figure 2.2 ESP32 Wroom 32**
 
 **ESP32 Wroom 32 Features:**
 
@@ -103,9 +105,9 @@ The purpose of the interconnections in this system is to ensure seamless communi
 
 These interconnections ensure smooth operation by allowing the system to respond efficiently to user actions and payment statuses, guaranteeing secure product dispensing after payment verification.
 
-# Schematic Circuit Connection
+### 📋 3. Schematic Circuit Connection
 
-## 3.1 Connection Diagram Setup
+## Connection Diagram Setup
 
 **Figure 3.1: Circuit Diagram**  
 The circuit diagram as shown in figure 3.1 depicts a setup featuring an ESP32 microcontroller as the central control unit. The ESP32 is connected to a relay module, a TFT display, push-button switches, a buzzer and multiple motors. Operating as the control hub, the ESP32 receives input from push-buttons connected to its GPIO pins via resistors, which send specific commands, such as activating the motors or triggering other actions.  
@@ -136,22 +138,46 @@ The library functions support key operations. SPI.h manages data exchange via Se
 Here is the cleaned-up version with the requested part removed (*Department of Electronics & Communication Engineering* and the "CHAPTER 3. SCHEMATIC CIRCUIT CONNECTION" line removed). The rest is kept exactly as you asked:
 
 
-** 4. Results and Discussions**
-4.1
-Experimental Setup:
+#### 📋 4. Results and Discussions
+
+#### **4.1 Experimental Setup:**
+![bread_board](https://github.com/user-attachments/assets/45c793ae-382f-4a11-bc53-68f199c89a47)
+
+
 The experimental setup for the project is as shown in figure 4.1. The breadboard was used to connect and test various components such as the ESP32 microcontroller, push buttons, buzzer, TFT display and product dispensing mechanism before finalizing the design for the vending machine. It was essential for prototyping the system and ensuring the integration of all components as well as testing their functionality before soldering them onto a permanent circuit board. The setup provided valuable insights about wiring, component interaction and debugging.
 Figure 4.1: Experimental Setup
 
-4.2
-Vending Machine Setup
+#### **4.2 Vending Machine Setup:**
+
 Along with the electronic components, the vending machine structure was built from MDF board, designed using Fusion 360 and cut with a laser cutter for accuracy. This custom-made machine can hold and dispense up to four products showing the practical use of the developed IoT-based payment gateway system. The internal setup of the vending machine as shown in figure 4.2 depicts the layout of the dispensing mechanism. It features coiled springs placed in individual compartments, each designed to hold a different product. This arrangement enables organised storage and smooth dispensing, as the coiled springs help push products forward when activated, ensuring each item can be dispensed accurately. Figure 4.3 displays the machine’s design as planned in Fusion 360 before adding electronics. It shows an interior view of the vending machine’s framework without products or electronic components. The machine features designated compartments with coiled spirals for product dispensing, arranged to support organised storage and smooth product release. The setup ensures each product can be dispensed independently, highlighting the machine’s mechanical aspects.
-Figure 4.2: Inner View
-Figure 4.3: Basic Design
+
+
+#### **Figure 4.2: Inner View**
+![ms2](https://github.com/user-attachments/assets/891154c8-862e-48a6-8081-543d11158485)
+
+
+
+#### **Figure 4.3: Basic Design**
+![ms1](https://github.com/user-attachments/assets/99237d35-bd40-4269-b264-0be525fc28f5)
+
 
 The figure 4.4 shows the fully assembled vending machine with products in place, demonstrating the complete setup. Four distinct product slots are visible, each stocked with different food items. To the right, there’s a TFT display and a control panel with labeled push buttons. The display shows the GUI, including options for product selection and controls for operating the vending machine, such as increment and decrement buttons and options to proceed or cancel. This setup illustrates the integration of electronic components with the machine’s dispensing mechanism, creating an interactive vending experience.
-Figure 4.4: Complete setup
-Figure 4.5: TFT GUI and Push Buttons
-Figure 4.6: Dynamic QR code
+
+
+#### **Figure 4.4: Complete setup**
+![vendingmachine1](https://github.com/user-attachments/assets/ab160397-b351-4a5a-bef7-fd63a4276bf6)
+
+
+
+#### **Figure 4.5: TFT GUI and Push Buttons**
+![Uploading TFT_GUI_Push.jpg…]()
+
+
+
+#### **Figure 4.6: Dynamic QR code**
+![QR](https://github.com/user-attachments/assets/df11dad0-d75a-48ca-b097-d7423889e2ed)
+
+
 
 The setup also includes a TFT display interface with easy-to-use buttons and displays like the QR code for payments, product options and navigation buttons for selection as shown in figure 4.5. The images of the TFT display show how users interact with the vending machine, including scanning the QR code to make payments as shown in figure 4.6.
 
@@ -189,13 +215,19 @@ A standout feature of the system is its ability to verify payments in real-time 
 
 1. Successful Transaction Data
    For successful transactions, Firebase receives the transaction data and once the payment status is verified as successful, the system triggers the product dispensing action. Below figure 4.7 is a snapshot of the data retrieved from Firebase for a successful transaction:
-   Figure 4.7: Payment Captured Status
+   #### **Figure 4.7: Payment Captured Status**
+   ![captured](https://github.com/user-attachments/assets/8d34a51f-8704-4aca-8260-22bc3458bb76)
+   
+
 
 This data is retrieved in real-time by the ESP32 and used to trigger the product dispensing mechanism. When the payment status is captured as ’payment.success’, the payment is considered valid, and the dispensing action is triggered. This seamless payment verification process ensures that only successful payments lead to the dispensing of products, preventing any errors or fraudulent transactions.
 
 2. Failed Transaction Data
    For failed transactions, the data is captured and stored in Firebase which is shown in figure 4.8 below:
-   Figure 4.8: Payment Failed Status
+   #### **Figure 4.8: Payment Failed Status**
+
+   ![failed](https://github.com/user-attachments/assets/76390fe8-cd82-4f71-b81c-e36495a2de4a)
+
 
 When the payment status is captured as ’payment.failed’, the system recognizes the transaction as unsuccessful. In this case, no dispensing action is triggered, ensuring that no product is dispensed without a valid payment. This process helps maintain the integrity and security of the system by preventing fraudulent or incomplete transactions.
 
@@ -221,7 +253,7 @@ Through iterative testing and debugging, the system was refined to ensure it per
 Here is your cleaned-up **Conclusion and Future Work** section with the requested formatting and content only:
 
 
-**Conclusion and Future Work**
+#### **5. Conclusion and Future Work**
 
 This project demonstrates the successful development of a payment gateway on an IoT-enabled device and vending machine, showcasing the system’s potential. It integrates modern technologies to enable efficient, seamless cashless transactions. The system is built around the ESP32 microcontroller, managing core functions like product selection, payment processing, and dispensing. Key hardware components, including push buttons, a TFT LCD, a product dispensing mechanism, and a buzzer, create an intuitive user experience. Cloud-based services like Google Firebase handle real-time transaction management, while Razorpay’s payment gateway facilitates secure, dynamic QR code generation for UPI or mobile wallet payments.
 
