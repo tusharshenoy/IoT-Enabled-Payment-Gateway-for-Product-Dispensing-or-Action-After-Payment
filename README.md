@@ -1,5 +1,5 @@
 
-### 📋1. Introduction
+### 📋 **1. Introduction**
 
 The Internet of Things (IoT) connects physical devices like sensors, processors, and electronic components to the internet, enabling them to communicate and share data seamlessly. Since its early days, from the first internet-connected Coca-Cola machine in 1982 to the widespread use of smart home devices today, IoT has transformed industries like healthcare, agriculture, and transportation.
 
@@ -41,7 +41,7 @@ The system follows a structured approach:
 * **Razorpay Setup:** Secure, UPI-based payments using dynamic QR codes.
 * **Final Deployment:** Testing and optimizing the system for real-world conditions.
 
-### 📋 2. System Block Diagram
+### 📋 **2. System Block Diagram**
 
 #### **Figure 2.1 Block Diagram**
 ![blockdiagram](https://github.com/user-attachments/assets/9d93b81c-ad1b-4b13-8a61-4f4aaf92fce7)
@@ -123,11 +123,11 @@ The purpose of the interconnections in this system is to ensure seamless communi
 
 These interconnections ensure smooth operation by allowing the system to respond efficiently to user actions and payment statuses, guaranteeing secure product dispensing after payment verification.
 
-### 📋 3. Schematic Circuit Connection
+### 📋 **3. Schematic Circuit Connection**
 
-## Connection Diagram Setup
+#### Connection Diagram Setup
 
-**Figure 3.1: Circuit Diagram**  
+#### **Figure 3.1: Circuit Diagram**  
 ![circuit_image](https://github.com/user-attachments/assets/c2dc9929-0337-4165-ab12-276255cd699d)
 
 
@@ -138,7 +138,7 @@ For user interaction, the ESP32 connects to an ILI9341 TFT display via SPI commu
 Push-buttons are connected to GPIO pins D27, D26, D25, D33, D32, D35, D34 and VN on the ESP32, with each input pin connected to a 3.3V source, allowing the ESP32 to read user commands. The buzzer and display are powered by 3.3V, with ground shared among all components. The motors connect to the relays through the relays’ COM and N.O. (Normally Open) pins, with each motor’s pin 2 connected to the relay COM pin and grounded through the N.O. pin. This configuration enables the ESP32 to activate relays and complete the motor circuit from a 12V power source connected to motor pin 1.  
 In this setup, the ESP32 microcontroller manages the whole system, making it easy to control the motors and relays. The TFT display shows information and the buzzer provides sound feedback to the user. The buck converter makes sure the correct voltage is supplied to all parts of the circuit, allowing smooth control over motor functions and with this arrangement, the ESP32 can handle different components, including push-buttons, the buzzer, the display and relays for motor control. The buck converter helps maintain the right voltage across the system, ensuring everything operates correctly.
 
-## 3.2 Arduino Libraries used:
+#### 3.2 Arduino Libraries used:
 
 In this project, various libraries provide essential functionality for interfacing with external components, managing files, communicating over Wi-Fi and integrating with Firebase.
 
@@ -151,7 +151,7 @@ In this project, various libraries provide essential functionality for interfaci
 7. **Firebase Integration:** The FirebaseESPClient.h library is pivotal for connecting the project to Firebase services. With this library, the device can interact with Firebase’s Realtime Database, Cloud Firestore, Firebase Storage and Cloud Functions. This integration allows real-time data synchronization between the device and the Firebase backend, making it possible to store and retrieve data, send notifications and execute cloud functions. This functionality is essential for projects requiring remote monitoring, data logging or user notifications via Firebase services.  
 
 
-## 3.3 Functioning of APIs
+#### 3.3 Functioning of APIs
 
 The IoT Enabled Payment Gateway System code incorporates various functions from the TFT_eSPI, WiFi and Firebase_ESP_Client libraries to enable its core functionalities. TFT functions are utilized to create a visually appealing and user friendly interface on the display. The user-defined functions and library functions provide a structured approach to managing product dispensing and payment in the system. The runMotorForProduct() function iterates over available products, controlling each relay to dispense the specified quantity based on the selected amount, ensuring precise control over the motors connected to each product. updateStock() adjusts stock levels post-transaction, preventing negative values and maintaining an accurate inventory. The utility function totalSelectedProducts() sums up the quantities selected, allowing verification before advancing to the payment stage. To enhance user interaction, the beep() function briefly activates a buzzer, signaling actions like button presses or errors for immediate feedback. For displaying QR codes on the screen, jpegRender(int xpos, int ypos) uses the JPEGDecoder library to decode and draw images at given coordinates, while drawSdJpeg(const char *filename, int xpos, int ypos) opens JPEG files from the SD card and renders them, displaying error messages if issues arise. The drawHeader() function initializes the screen interface by drawing a header, setting text properties and providing system identification.  
 The library functions support key operations. SPI.h manages data exchange via Serial Peripheral Interface (SPI), essential for interactions with the SD card and TFT display. FS.h and SD.h handle SD card operations, using SD.begin() to initialize and SD.open() to open files for reading or writing, such as retrieving QR code images. WiFi.h connects the ESP32 to a Wi-Fi network using WiFi.begin() with network credentials and WiFi.status() to check connectivity, enabling communication with Firebase. For Firebase integration, Firebase.h includes functions like Firebase.signUp() to register the device, Firebase.RTDB.beginStream() to start real-time data streaming and Firebase.RTDB.setStreamCallback() to handle payment status updates and timeouts. JPEGDecoder.h decodes JPEG images, with JpegDec.decodeSdFile() for SD card files and JpegDec.read() for reading image data, essential for QR code display. Finally, TFT_eSPI.h controls the TFT display, using functions like tft.init(), tft.fillScreen(), tft.setTextColor(), tft.setCursor() and tft.print() for setting up the interface, displaying product details, quantities, prices and messages, creating a user-friendly interface for the system.
@@ -159,7 +159,7 @@ The library functions support key operations. SPI.h manages data exchange via Se
 Here is the cleaned-up version with the requested part removed (*Department of Electronics & Communication Engineering* and the "CHAPTER 3. SCHEMATIC CIRCUIT CONNECTION" line removed). The rest is kept exactly as you asked:
 
 
-#### 📋 4. Results and Discussions
+### 📋**4. Results and Discussions**
 
 #### **4.1 Experimental Setup:**
 ![bread_board](https://github.com/user-attachments/assets/45c793ae-382f-4a11-bc53-68f199c89a47)
@@ -202,7 +202,7 @@ The figure 4.4 shows the fully assembled vending machine with products in place,
 
 The setup also includes a TFT display interface with easy-to-use buttons and displays like the QR code for payments, product options and navigation buttons for selection as shown in figure 4.5. The images of the TFT display show how users interact with the vending machine, including scanning the QR code to make payments as shown in figure 4.6.
 
-4.3 Successful Integration of the Components
+#### 4.3 Successful Integration of the Components
 In the development of a payment gateway on an IoT-enabled device for product dispensing or unlocking a service after payment, the ESP32 microcontroller plays a central role in managing and controlling the entire process. The setup of the ESP32 was carefully planned and implemented to ensure smooth operation across multiple components. Here’s a breakdown of how the ESP32 was set up:
 
 1. Hardware Configuration:
@@ -228,13 +228,13 @@ The code was structured to handle these tasks concurrently without interference,
 5. Testing and Debugging:
    During the setup phase, the ESP32 was repeatedly tested to ensure reliable communication with both Firebase and Razorpay. Debugging tools in the Arduino IDE, along with serial print statements were employed to monitor data flow and troubleshoot any issues in communication or logic.
 
-4.4 Cashless Transaction Via Razorpay
+#### 4.4 Cashless Transaction Via Razorpay
 The integration of Razorpay as the payment gateway enables the system to process secure, cashless transactions. Users are provided with a dynamic QR code on the TFT screen, linked to their selected product and payment amount. This QR code is scanned via mobile devices using UPI, simplifying the payment process. Once the payment is initiated, Razorpay ensures the transaction is securely processed, eliminating the need for physical currency handling. Additionally, integration with Google Firebase facilitates real-time communication between the ESP32 and Razorpay, ensuring that the system accurately verifies payments and reflects transaction status without delay. This results in a smooth, user-friendly payment process.
 
-4.5 Evidence of Payment Verification
+#### 4.5 Evidence of Payment Verification
 A standout feature of the system is its ability to verify payments in real-time using Google Firebase as a cloud-based database. Firebase updates instantly once the transaction is complete, sending confirmation to the ESP32 microcontroller, which then triggers the product dispensing mechanism if the payment is successful. The entire process from payment to dispensing occurs within seconds, ensuring that users do not face unnecessary delays. This integration ensures that transactions are securely validated before any product is dispensed, preventing accidental or fraudulent dispensations.
 
-1. Successful Transaction Data
+##### 1. Successful Transaction Data
    For successful transactions, Firebase receives the transaction data and once the payment status is verified as successful, the system triggers the product dispensing action. Below figure 4.7 is a snapshot of the data retrieved from Firebase for a successful transaction:
    #### **Figure 4.7: Payment Captured Status**
    ![captured](https://github.com/user-attachments/assets/8d34a51f-8704-4aca-8260-22bc3458bb76)
@@ -243,7 +243,7 @@ A standout feature of the system is its ability to verify payments in real-time 
 
 This data is retrieved in real-time by the ESP32 and used to trigger the product dispensing mechanism. When the payment status is captured as ’payment.success’, the payment is considered valid, and the dispensing action is triggered. This seamless payment verification process ensures that only successful payments lead to the dispensing of products, preventing any errors or fraudulent transactions.
 
-2. Failed Transaction Data
+##### 2. Failed Transaction Data
    For failed transactions, the data is captured and stored in Firebase which is shown in figure 4.8 below:
    #### **Figure 4.8: Payment Failed Status**
 
@@ -252,10 +252,10 @@ This data is retrieved in real-time by the ESP32 and used to trigger the product
 
 When the payment status is captured as ’payment.failed’, the system recognizes the transaction as unsuccessful. In this case, no dispensing action is triggered, ensuring that no product is dispensed without a valid payment. This process helps maintain the integrity and security of the system by preventing fraudulent or incomplete transactions.
 
-4.6 System Performance
+#### 4.6 System Performance
 The system demonstrates consistent and reliable performance throughout its operations. The Wi-Fi communication between the ESP32, Firebase and Razorpay is stable, ensuring that all components work in sync without any major connectivity issues. The delay between product selection, payment initiation and product dispensing is minimal, usually taking only a few seconds to complete all actions. This fast processing time enhances user satisfaction by ensuring that there are no long waits for transactions to complete. The system’s performance under various conditions, including multiple users and simultaneous transactions, proves its efficiency and scalability for practical use in automated vending machines or similar applications.
 
-4.7 Major Milestones and Issues
+#### 4.7 Major Milestones and Issues
 Throughout the development of the IoT-enabled payment gateway system, several key milestones were achieved, along with challenges that had to be overcome to ensure the system functioned as expected.
 
 Wi-Fi and Firebase Communication: One of the initial hurdles was establishing stable communication between the ESP32 and Firebase. A reliable Wi-Fi connection was essential for real-time payment verification. The first challenge encountered was Wi-Fi instability, which was resolved by optimizing network configurations, ensuring proper authentication, and ensuring the network was secure. Once stable, the ESP32 was able to reliably send and receive data from Firebase, which was crucial for payment status updates and product dispensing actions.
@@ -271,10 +271,7 @@ Project Progression: The project started with a simple task of lighting up an LE
 Through iterative testing and debugging, the system was refined to ensure it performed consistently, resulting in a fully functional IoT-enabled payment gateway system with seamless payment processing and product dispensing.
 
 
-Here is your cleaned-up **Conclusion and Future Work** section with the requested formatting and content only:
-
-
-#### **5. Conclusion and Future Work**
+### **5. Conclusion and Future Work**
 
 This project demonstrates the successful development of a payment gateway on an IoT-enabled device and vending machine, showcasing the system’s potential. It integrates modern technologies to enable efficient, seamless cashless transactions. The system is built around the ESP32 microcontroller, managing core functions like product selection, payment processing, and dispensing. Key hardware components, including push buttons, a TFT LCD, a product dispensing mechanism, and a buzzer, create an intuitive user experience. Cloud-based services like Google Firebase handle real-time transaction management, while Razorpay’s payment gateway facilitates secure, dynamic QR code generation for UPI or mobile wallet payments.
 
